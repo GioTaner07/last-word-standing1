@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Last Word Standing - Indonesian Language Survival Game">
+  <title>Last Word Standing | Survival Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Last Word Standing home">
+      <span class="brand-mark">L<span>W</span>S</span>
+      <span class="brand-name">LAST WORD<br><b>STANDING</b></span>
+    </a>
+    <div class="topbar-right">
+      <span class="online-dot"></span><span class="top-status">SURVIVAL PROTOCOL</span>
+      <span class="version">STAGE 0.2</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- LANDING PAGE -->
+    <section id="landingPage" class="screen landing-screen">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> INDONESIAN LANGUAGE SURVIVAL</div>
+        <h1>THINK FAST.<br><span>SPEAK RIGHT.</span><br>STAY ALIVE.</h1>
+        <p class="hero-description">Uji kemampuan Bahasa Indonesiamu. Bertahan dari setiap tantangan, hindari eliminasi, dan jadilah pemain terakhir yang tersisa.</p>
+        <div class="hero-actions">
+          <button id="playNowBtn" class="btn btn-primary btn-large">PLAY NOW <span>↗</span></button>
+          <button id="howToPlayBtn" class="btn btn-ghost btn-large">HOW TO PLAY</button>
+        </div>
+        <div class="hero-footnote"><span class="pulse-dot"></span> 2–15 PLAYERS <i></i> 3 LIVES <i></i> 1 WINNER</div>
+      </div>
+      <div class="hero-visual" aria-label="Game survival arena illustration">
+        <div class="visual-grid"></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="arena-core">
+          <div class="core-ring"></div>
+          <div class="core-text"><small>ONLY ONE</small><strong>WILL<br>REMAIN</strong><span>◈ SURVIVE THE WORDS ◈</span></div>
+        </div>
+        <div class="float-card card-top"><span class="mini-icon">⌁</span><div><small>MISSION</small><b>LANGUAGE<br>MASTERY</b></div></div>
+        <div class="float-card card-bottom"><span class="mini-icon red">♥</span><div><small>YOUR STATUS</small><b>NOT ELIMINATED</b></div></div>
+        <div class="side-label">ARENA / 001</div>
+      </div>
+      <div class="landing-bottom">
+        <span>EDUCATION MEETS SURVIVAL</span><span>NO SECOND CHANCES. THINK CAREFULLY.</span>
+      </div>
+    </section>
+
+    <!-- HOW TO PLAY MODAL -->
+    <div id="howModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="howTitle">
+      <div class="modal-card">
+        <button class="modal-close" data-close-modal aria-label="Tutup">×</button>
+        <div class="eyebrow">SURVIVAL GUIDE</div>
+        <h2 id="howTitle">HOW TO PLAY</h2>
+        <div class="guide-list">
+          <div><b>01</b><p><strong>Join the arena</strong><br>Masukkan nama dan buat atau gabung ke room.</p></div>
+          <div><b>02</b><p><strong>Answer to survive</strong><br>Jawab tantangan Bahasa Indonesia sebelum waktu habis.</p></div>
+          <div><b>03</b><p><strong>Protect your lives</strong><br>Kamu punya 3 nyawa. Jawaban salah atau kehabisan waktu mengurangi 1 nyawa.</p></div>
+          <div><b>04</b><p><strong>Sudden Death &amp; Winner</strong><br>Saat tersisa 2 pemain, mode Sudden Death aktif dengan timer lebih cepat hingga 1 pemenang bertahan.</p></div>
+        </div>
+        <button class="btn btn-primary full-width" data-close-modal>GOT IT</button>
+      </div>
+    </div>
+
+    <!-- ENTRY SCREEN -->
+    <section id="entryPage" class="screen entry-screen hidden">
+      <button class="back-link" id="backHomeBtn">← BACK TO HOME</button>
+      <div class="entry-wrap">
+        <div class="entry-heading">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ENTER THE BATTLEFIELD</div>
+          <h2>READY TO<br><span>STAND?</span></h2>
+          <p>Pilih bagaimana kamu ingin memasuki arena.</p>
+        </div>
+        <div class="entry-panels">
+          <article class="entry-card">
+            <div class="card-number">01 / HOST</div>
+            <div class="entry-icon">＋</div>
+            <h3>CREATE ROOM</h3>
+            <p>Buat arena baru dan undang teman-temanmu untuk bertanding.</p>
+            <label for="hostName">NAMA PEMAIN</label>
+            <input id="hostName" maxlength="16" placeholder="Contoh: Gio" autocomplete="off">
+            <button id="createRoomBtn" class="btn btn-primary full-width">CREATE ARENA ↗</button>
+          </article>
+          <article class="entry-card">
+            <div class="card-number">02 / PLAYER</div>
+            <div class="entry-icon join-icon">⌁</div>
+            <h3>JOIN ROOM</h3>
+            <p>Masukkan kode room dari host untuk bergabung ke arena.</p>
+            <label for="joinName">NAMA PEMAIN</label>
+            <input id="joinName" maxlength="16" placeholder="Nama kamu" autocomplete="off">
+            <label for="roomCodeInput">ROOM CODE</label>
+            <input id="roomCodeInput" maxlength="6" placeholder="Contoh: A7K2QX" class="code-input" autocomplete="off">
+            <button id="joinRoomBtn" class="btn btn-outline full-width">JOIN ARENA →</button>
+          </article>
+        </div>
+        <p class="prototype-note"><span>ⓘ</span> Prototype lokal Tahap 2: gameplay lokal berjalan di browser ini. Integrasi Firebase multiplayer menyusul setelah pengujian lokal.</p>
+      </div>
+    </section>
+
+    <!-- WAITING ROOM -->
+    <section id="lobbyPage" class="screen lobby-screen hidden">
+      <div class="lobby-header">
+        <button class="back-link" id="leaveRoomBtn">← LEAVE ROOM</button>
+        <div class="room-pill"><span class="online-dot"></span> WAITING FOR PLAYERS</div>
+      </div>
+      <div class="lobby-title-row">
+        <div><div class="eyebrow">PRE-MATCH LOBBY</div><h2>THE <span>ARENA</span></h2></div>
+        <div class="room-code-box"><small>ROOM CODE</small><strong id="roomCodeDisplay">------</strong><button id="copyCodeBtn" title="Salin kode">▣ COPY</button></div>
+      </div>
+      <div class="lobby-layout">
+        <section class="players-panel">
+          <div class="panel-heading"><div><span class="panel-kicker">THE COMPETITORS</span><h3>PLAYERS <span id="playerCount">01</span><small> / 15</small></h3></div><span class="live-tag">● LIVE LOBBY</span></div>
+          <div id="playerList" class="player-list"></div>
+          <div class="lobby-tip"><span>✦</span> Bagikan kode room kepada temanmu. Arena dapat dimulai setelah minimal 2 pemain bergabung.</div>
+        </section>
+        <aside class="match-panel">
+          <div class="panel-kicker">MATCH SETTINGS</div>
+          <div class="setting-row"><span>GAME MODE</span><b>SURVIVAL</b></div>
+          <div class="setting-row"><span>STARTING LIVES</span><b class="red-text">♥ ♥ ♥</b></div>
+          <div class="setting-row"><span>MAX PLAYERS</span><b>15 PLAYERS</b></div>
+          <div class="setting-row"><span>QUESTION TYPE</span><b>BAHASA INDONESIA</b></div>
+          <div class="setting-row"><span>ROOM STATUS</span><b class="waiting-text">WAITING</b></div>
+          <div class="match-divider"></div>
+          <button id="startGameBtn" class="btn btn-primary full-width" disabled>START MATCH <span>↗</span></button>
+          <p id="startHint" class="start-hint">Host dapat memulai setelah minimal 2 pemain bergabung.</p>
+          <button id="addDemoBtn" class="btn btn-ghost full-width demo-button">＋ ADD DEMO PLAYER</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GAMEPLAY SCREEN (STAGE 2) -->
+    <section id="gameplayPage" class="screen game-screen hidden">
+      <div class="game-topbar">
+        <div class="game-badges">
+          <span id="roundBadge" class="badge-pill">ROUND 01</span>
+          <span id="aliveBadge" class="badge-pill badge-green">ALIVE: 0/0</span>
+          <span id="suddenDeathBadge" class="badge-pill badge-red hidden">⚡ SUDDEN DEATH</span>
+        </div>
+        <button id="abortMatchBtn" class="back-link">✕ END MATCH</button>
+      </div>
+
+      <div class="game-layout">
+        <!-- ARENA UTAMA SOAL & JAWABAN -->
+        <section class="question-panel">
+          <div class="turn-header">
+            <div>
+              <span class="panel-kicker">ACTIVE TURN</span>
+              <h2 id="activePlayerTitle">GILIRAN: -</h2>
+            </div>
+            <div class="timer-box">
+              <small>TIME LEFT</small>
+              <strong id="timerDisplay">12s</strong>
+            </div>
+          </div>
+
+          <div class="timer-track" aria-hidden="true">
+            <div id="timerBar" class="timer-bar"></div>
+          </div>
+
+          <div class="question-card">
+            <div class="question-meta">
+              <span id="questionCategory" class="q-category">KATEGORI</span>
+              <span id="questionHint" class="q-hint">Petunjuk singkat</span>
+            </div>
+            <p id="questionPrompt" class="question-prompt">Memuat pertanyaan Bahasa Indonesia...</p>
+          </div>
+
+          <form id="answerForm" class="answer-form">
+            <label for="answerInput">JAWABAN KAMU</label>
+            <div class="answer-row">
+              <input id="answerInput" type="text" placeholder="Ketik jawaban Bahasa Indonesia lalu tekan Enter..." autocomplete="off">
+              <button id="submitAnswerBtn" type="submit" class="btn btn-primary">SUBMIT ↗</button>
+            </div>
+          </form>
+
+          <div class="local-sim-bar">
+            <span class="sim-label">LOKAL TEST / SIMULASI:</span>
+            <button id="simBotTurnBtn" type="button" class="btn btn-ghost btn-compact">AUTO-SIMULATE TURN</button>
+            <button id="skipTurnBtn" type="button" class="btn btn-ghost btn-compact">FORCE TIMEOUT (-1 ♥)</button>
+          </div>
+
+          <div id="feedbackBox" class="feedback-box feedback-neutral">
+            Siap dimulai! Jawab dengan tepat sebelum waktu habis.
+          </div>
+
+          <div class="log-panel">
+            <div class="panel-kicker">ARENA LOG</div>
+            <ul id="eventLog" class="event-log"></ul>
+          </div>
+        </section>
+
+        <!-- DAFTAR PEMAIN BERTAHAN, SKOR & AKURASI -->
+        <aside class="survivors-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">LIVE STANDINGS</span>
+              <h3>SURVIVORS &amp; STATS</h3>
+            </div>
+            <span class="live-tag">● ACTIVE</span>
+          </div>
+          <div id="survivorList" class="survivor-list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WINNER SCREEN -->
+    <section id="winnerPage" class="screen winner-screen hidden">
+      <div class="winner-card">
+        <div class="eyebrow"><span class="eyebrow-line"></span> ARENA CHAMPION</div>
+        <div class="winner-crown">♛</div>
+        <h2 id="winnerName">PEMENANG</h2>
+        <p id="winnerSubtitle" class="winner-subtitle">Pemain terakhir yang bertahan di Last Word Standing.</p>
+
+        <div id="winnerStatsRow" class="preview-stats"></div>
+
+        <div class="final-standings-wrap">
+          <div class="panel-kicker">FINAL LEADERBOARD</div>
+          <div id="finalLeaderboard" class="final-leaderboard"></div>
+        </div>
+
+        <div class="winner-actions">
+          <button id="playAgainBtn" class="btn btn-primary">PLAY AGAIN ↻</button>
+          <button id="winnerHomeBtn" class="btn btn-ghost">BACK TO HOME</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>LAST WORD STANDING © 2026</span><span>THINK FAST. SPEAK RIGHT. STAY ALIVE.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <!-- Firebase App, Auth, dan Realtime Database (Compat SDK agar langsung jalan tanpa bundler) -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
