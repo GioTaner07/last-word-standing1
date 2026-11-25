@@ -1,13 +1,6 @@
 // LAST WORD STANDING - Stage 3 (Local Gameplay + Firebase Realtime Multiplayer)
 
 const firebaseConfig = {
-  apiKey: "ISI_API_KEY_KAMU",
-  authDomain: "ISI_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://ISI_PROJECT_ID-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "ISI_PROJECT_ID",
-  storageBucket: "ISI_PROJECT_ID.appspot.com",
-  messagingSenderId: "ISI_SENDER_ID",
-  appId: "ISI_APP_ID"
   apiKey: "AIzaSyC_yIWrRM4WZ_pP_dflbJ-39hG92J6Y25A",
   authDomain: "last-word-standing-e99fb.firebaseapp.com",
   databaseURL: "https://last-word-standing-e99fb-default-rtdb.asia-southeast1.firebasedatabase.app",
