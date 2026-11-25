@@ -1,13 +1,14 @@
 // LAST WORD STANDING - Stage 3 (Local Gameplay + Firebase Realtime Multiplayer)
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "API_KEY_KAMU",
+  apiKey: "AIzaSyC_yIWrRM4WZ_pP_dflbJ-39hG92J6Y25A",
   authDomain: "last-word-standing-e99fb.firebaseapp.com",
-  databaseURL: "https://last-word-standing-e99fb-default-rtdb.firebaseio.com",
   projectId: "last-word-standing-e99fb",
   storageBucket: "last-word-standing-e99fb.firebasestorage.app",
   messagingSenderId: "394915963762",
-  appId: "1:394915963762:web:51cde099d11ba1834633eb"
+  appId: "1:394915963762:web:51cde099d11ba1834633eb",
+  measurementId: "G-SFCYDDYMKV"
 };
 
 const hasFirebaseSdk =
