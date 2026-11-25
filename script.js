@@ -8,6 +8,13 @@ const firebaseConfig = {
   storageBucket: "ISI_PROJECT_ID.appspot.com",
   messagingSenderId: "ISI_SENDER_ID",
   appId: "ISI_APP_ID"
+  apiKey: "AIzaSyC_yIWrRM4WZ_pP_dflbJ-39hG92J6Y25A",
+  authDomain: "last-word-standing-e99fb.firebaseapp.com",
+  databaseURL: "https://last-word-standing-e99fb-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "last-word-standing-e99fb",
+  storageBucket: "last-word-standing-e99fb.firebasestorage.app",
+  messagingSenderId: "394915963762",
+  appId: "1:394915963762:web:51cde099d11ba1834633eb"
 };
 
 const hasFirebaseSdk =
