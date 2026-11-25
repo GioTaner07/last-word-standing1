@@ -1109,7 +1109,11 @@ $("howModal").addEventListener("click", event => {
   if (event.target === $("howModal")) $("howModal").classList.add("hidden");
 });
 $("backHomeBtn").addEventListener("click", () => showScreen("landing"));
-$("createRoomBtn").addEventListener("click", createRoom);
+$("createRoomBtn").addEventListener("click", () => {
+  console.log("TOMBOL CREATE ARENA BERHASIL DIKLIK!");
+  alert("Tombol CREATE ARENA berfungsi!");
+  createRoom();
+});
 $("joinRoomBtn").addEventListener("click", joinRoom);
 $("leaveRoomBtn").addEventListener("click", leaveRoom);
 $("addDemoBtn").addEventListener("click", addDemoPlayer);
