@@ -282,40 +282,63 @@ function initFirebase() {
   });
 }
 
+
 // --- LOBBY & ROOM ---
 async function createRoom() {
+  console.log("CREATE ROOM: tombol berhasil diklik");
+
   const name = cleanName($("hostName").value);
-  if (!name) return showToast("Masukkan nama pemain terlebih dahulu.");
+
+  if (!name) {
+    return showToast("Masukkan nama pemain terlebih dahulu.");
+  }
 
   if (hasFirebaseSdk) {
-    if (!myUid) return showToast("Menghubungkan ke Firebase, coba lagi...");
+    if (!myUid || !db) {
+      console.error("Firebase belum siap:", { myUid, db });
+      return showToast("Menghubungkan ke Firebase, coba lagi...");
+    }
+
     const code = generateRoomCode();
     const host = makePlayer(name, true, false, myUid);
     host.joinedAt = firebase.database.ServerValue.TIMESTAMP;
 
-    await db.ref(`rooms/${code}`).set({
-      meta: {
-        code,
-        hostUid: myUid,
-        status: "waiting",
-        createdAt: firebase.database.ServerValue.TIMESTAMP
-      },
-      players: {
-        [myUid]: host
-      }
-    });
+    try {
+      console.log("Mencoba membuat room:", code);
 
-    attachRoomListener(code);
-    showToast("Arena online dibuat! Bagikan kode room.");
-    return;
+      await db.ref(`rooms/${code}`).set({
+        meta: {
+          code,
+          hostUid: myUid,
+          status: "waiting",
+          createdAt: firebase.database.ServerValue.TIMESTAMP
+        },
+        players: {
+          [myUid]: host
+        }
+      });
+
+      console.log("Room berhasil dibuat:", code);
+
+      attachRoomListener(code);
+      showToast("Arena online dibuat! Bagikan kode room.");
+      return;
+
+    } catch (error) {
+      console.error("CREATE ROOM ERROR:", error);
+      showToast("Gagal membuat arena: " + error.message);
+      return;
+    }
   }
 
   // Fallback mode lokal jika Firebase belum dikonfigurasi
   state.roomCode = generateRoomCode();
   state.isHost = true;
+
   const host = makePlayer(name, true, false);
   state.currentPlayerId = host.id;
   state.players = [host];
+
   renderLobby();
   showScreen("lobby");
   showToast("Arena lokal dibuat. Bagikan kode room!");
