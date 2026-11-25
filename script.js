@@ -278,10 +278,18 @@ function initFirebase() {
     if (user) {
       myUid = user.uid;
       state.currentPlayerId = user.uid;
+
+      console.log("FIREBASE AUTH BERHASIL");
+      console.log("UID:", myUid);
+
+      showToast("Firebase berhasil terhubung!");
+    } else {
+      myUid = null;
+      console.log("FIREBASE AUTH BELUM LOGIN");
+      showToast("Firebase belum login, coba lagi..."); 
     }
   });
 }
-
 
 // --- LOBBY & ROOM ---
 async function createRoom() {
