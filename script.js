@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "last-word-standing-e99fb.firebasestorage.app",
   messagingSenderId: "394915963762",
   appId: "1:394915963762:web:51cde099d11ba1834633eb"
-};
+}; 
 
 const hasFirebaseSdk =
   typeof window.firebase !== "undefined" &&
